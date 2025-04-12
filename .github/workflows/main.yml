@@ -1,0 +1,31 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Déclenche le déploiement à chaque push sur la branche "main"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # Spécifie la version de Node.js (utile pour certaines configurations de sites, sinon tu peux ignorer cette étape)
+
+    - name: Install dependencies
+      run: npm install  # Si tu utilises npm ou des dépendances JS, sinon tu peux ignorer cette étape
+
+    - name: Build the site
+      run: npm run build  # Si tu as une commande de build, sinon tu peux ignorer cette étape
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./  # Le dossier que tu veux déployer. Change si tu as un dossier spécifique comme "dist" ou "build".
