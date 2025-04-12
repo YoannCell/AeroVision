@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aérospatiale - Idées et Innovation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#soumettre-idee">Soumettre une Idée</a></li>
+                <li><a href="#voir-idees">Voir les Idées</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil">
+        <h1>Bienvenue sur le site des Idées Aérospatiales</h1>
+        <p>Ici, nous collectons les idées innovantes pour faire avancer le domaine de l'aérospatiale. Vous pouvez soumettre vos idées et découvrir celles proposées par les autres.</p>
+    </section>
+
+    <section id="soumettre-idee">
+        <h2>Soumettre une Idée</h2>
+        <form id="form-idee">
+            <label for="titre">Titre de l'Idée:</label>
+            <input type="text" id="titre" name="titre" required><br><br>
+
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+            <label for="theme">Choisir un Thème:</label>
+            <select id="theme" name="theme">
+                <option value="Technologie">Technologie</option>
+                <option value="Innovation">Innovation</option>
+                <option value="Recherche">Recherche</option>
+                <option value="Développement Durable">Développement Durable</option>
+                <option value="Exploration Spatiale">Exploration Spatiale</option>
+            </select><br><br>
+
+            <button type="submit">Soumettre</button>
+        </form>
+    </section>
+
+    <section id="voir-idees">
+        <h2>Voir les Idées Soumises</h2>
+        <div id="liste-idees">
+            <!-- Les idées soumises seront affichées ici -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Aérospatiale. Tous droits réservés.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
